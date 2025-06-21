@@ -94,7 +94,7 @@ const Search = () => {
 
                 financials: {
                     totalCost: coordinator['Total Cost'] || 'Not Available',
-                    netContribution: coordinator['Net EU Contribution'] || 'Not Available'
+                    netContribution: coordinator['Organization Net EU Contribution'] || 'Not Available'
                 },
                 contact: {
                     name: coordinator['Contact'] || 'No Contact',
@@ -110,7 +110,7 @@ const Search = () => {
                     organization: coordinator['Organization'] || 'Unknown',
                     country: coordinator['Country'] || 'Unknown',
                     role: coordinator['Organization Role'] || 'Coordinator',
-                    netContribution: coordinator['Net EU Contribution'] || 'Not Available',
+                    netContribution: coordinator['Organization Net EU Contribution'] || 'Not Available',
                     coordinatorContact: coordinator['Contact'] || 'Not Available',
                     coordinatorRole: coordinator['Role'] || 'Not Available',
                     coordinatorEmail: coordinator['Email'] || 'Not Available',
@@ -124,7 +124,7 @@ const Search = () => {
                     OrganizationCorrectContribution_participant: participant['Organization correct contribution'] || 'Unknown',
                     country: participant['Country'] || 'Unknown',
                     role: participant['Organization Role'] || 'Participant',
-                    netContribution: participant['Net EU Contribution'] || 'Not Available',
+                    netContribution: participant['Organization Net EU Contribution'] || 'Not Available',
                     participantContact: participant['Contact'] || 'Not Available',
                     participantRole: participant['Role'] || 'Not Available',
                     participantEmail: participant['Email'] || 'Not Available',
@@ -160,7 +160,7 @@ const Search = () => {
             },
             financials: {
                 totalCost: project['Total Cost'] || 'Not Available',
-                netContribution: project['Net EU Contribution'] || 'Not Available'
+                netContribution: project['Organization Net EU Contribution'] || 'Not Available'
             },
             contact: {
                 name: project['Contact'] || 'No Contact',
@@ -175,7 +175,7 @@ const Search = () => {
                 organization: project['Organization'] || 'Unknown',
                 country: project['Country'] || 'Unknown',
                 role: project['Organization Role'] || 'Unknown',
-                netContribution: project['Net EU Contribution'] || 'Not Available'
+                netContribution: project['Organization Net EU Contribution'] || 'Not Available'
             },
             participants: [] // Empty array for old format   
         };
