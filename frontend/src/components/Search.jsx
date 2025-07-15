@@ -79,103 +79,103 @@ const Search = () => {
         if (project.coordinator && project.participants) {
             const coordinator = project.coordinator;
             return {
-                title: coordinator['Project Topic'] || 'Untitled Project',
-                objective: coordinator['Objective'] || 'Objective',
-                EuContribution: coordinator['EU Contribution'] || 'EU Contribution',
-                acronym: coordinator['Acronym'] || 'No Acronym',
-                fundedUnder: coordinator['Funded Under'] || 'Funded Under',
-                ProjectWeb_Linkedin: coordinator['Project web or Linkedin'] || 'Project web or Linkedin',
-                id: coordinator['Project ID'] || 'N/A',
+                title: coordinator['project_topic'] || '_',
+                objective: coordinator['objective'] || '_',
+                EuContribution: coordinator['eu_contribution'] || '_',
+                acronym: coordinator['acronym_x'] || '_',
+                fundedUnder: coordinator['funded_under'] || '_',
+                ProjectWeb_Linkedin: coordinator['project_web_or_linkedin'] || '_',
+                id: coordinator['project_id'] || '_',
                 dates: {
-                    start: coordinator['Start Date'] || 'Not Specified',
-                    end: coordinator['End Date'] || 'Not Specified'
+                    start: coordinator['start_date'] || '_',
+                    end: coordinator['end_date'] || '_'
                 },
-                OrganizationCorrectContribution: coordinator['Organization correct contribution'] || 'Unknown',
+                OrganizationCorrectContribution: coordinator['organization_correct_contribution'] || '_',
 
                 financials: {
-                    totalCost: coordinator['Total Cost'] || 'Not Available',
-                    netContribution: coordinator['Organization Net EU Contribution'] || 'Not Available'
+                    totalCost: coordinator['total_cost'] || '_',
+                    netContribution: coordinator['organization_net_eu_contribution'] || '_'
                 },
                 contact: {
-                    name: coordinator['Contact'] || 'No Contact',
-                    email: coordinator['Email'] || 'No Email',
-                    phone: coordinator['Phone'] || 'No Phone'
+                    name: coordinator['contact'] || '_',
+                    email: coordinator['email'] || '_',
+                    phone: coordinator['phone'] || '_'
                 },
                 additionalInfo: {
-                    programme: coordinator['Programme'] || 'Unspecified',
-                    topic: coordinator['Topic'] || 'No Additional Topic'
+                    programme: coordinator['programme'] || '_',
+                    topic: coordinator['project_topic'] || '_'
                 },
                 coordinator: {
-                    flag: countries(coordinator['Country']),
-                    organization: coordinator['Organization'] || 'Unknown',
-                    country: coordinator['Country'] || 'Unknown',
-                    role: coordinator['Organization Role'] || 'Coordinator',
-                    netContribution: coordinator['Organization Net EU Contribution'] || 'Not Available',
-                    coordinatorContact: coordinator['Contact'] || 'Not Available',
-                    coordinatorRole: coordinator['Role'] || 'Not Available',
-                    coordinatorEmail: coordinator['Email'] || 'Not Available',
-                    coordinatorPhone: coordinator['Phone'] || 'Not Available',
-                    coordinatorLinkedin: coordinator['Linkedin'] || 'Not Available'
+                    flag: countries(coordinator['country']),
+                    organization: coordinator['organization_name'] || '_',
+                    country: coordinator['country'] || '_',
+                    role: coordinator['organization_role'] || '_',
+                    netContribution: coordinator['organization_net_eu_contribution'] || '_',
+                    coordinatorContact: coordinator['contact'] || '_',
+                    coordinatorRole: coordinator['role'] || '_',
+                    coordinatorEmail: coordinator['email'] || '_',
+                    coordinatorPhone: coordinator['phone'] || '_',
+                    coordinatorLinkedin: coordinator['contact_linkedin'] || '_'
 
                 },
                 participants: project.participants.map(participant => ({
-                    flag: countries(participant['Country']),
-                    organization: participant['Organization'] || 'Unknown',
-                    OrganizationCorrectContribution_participant: participant['Organization correct contribution'] || 'Unknown',
-                    country: participant['Country'] || 'Unknown',
-                    role: participant['Organization Role'] || 'Participant',
-                    netContribution: participant['Organization Net EU Contribution'] || 'Not Available',
-                    participantContact: participant['Contact'] || 'Not Available',
-                    participantRole: participant['Role'] || 'Not Available',
-                    participantEmail: participant['Email'] || 'Not Available',
-                    participantPhone: participant['Phone'] || 'Not Available',
-                    participantLinkedin: participant['Linkedin'] || 'Not Available'
+                    flag: countries(participant['country']),
+                    organization: participant['organization_name'] || '_',
+                    OrganizationCorrectContribution_participant: participant['organization_correct_contribution'] || '_',
+                    country: participant['country'] || '_',
+                    role: participant['organization_role'] || '_',
+                    netContribution: participant['organization_net_eu_contribution'] || '_',
+                    participantContact: participant['contact'] || '_',
+                    participantRole: participant['role'] || '_',
+                    participantEmail: participant['email'] || '_',
+                    participantPhone: participant['phone'] || '_',
+                    participantLinkedin: participant['contact_linkedin'] || '_'
                 })),
-                CallForProposal: coordinator['Call for Proposal'] || 'Unknown'
+                CallForProposal: coordinator['call_for_proposal'] || '_'
             };
         }
 
         // Fallback to old format if needed
         return {
-            title: project['Project Topic'] || 'Untitled Project',
-            objective: project['Objective'] || 'Objective',
-            acronym: project['Acronym'] || 'Untitled',
-            EuContribution: project['EU Contribution'] || 'EU Contribution',
-            fundedUnder: project['Funded Under'] || 'Funded Under',
-            ProjectWeb_Linkedin: project['Project web or Linkedin'] || 'Project web or Linkedin',
-            id: project['Project ID'] || 'N/A',
-            organization: project['Organization'] || 'Unknown',
-            OrganizationCorrectContribution: project['Organization correct contribution'] || 'Unknown',
-            coordinatorContact: project['Contact'] || 'Not Available',
-            coordinatorRole: project['Role'] || 'Not Available',
-            coordinatorEmail: project['Email'] || 'Not Available',
-            coordinatorPhone: project['Phone'] || 'Not Available',
-            coordinatorLinkedin: project['Linkedin'] || 'Not Available',
+            title: project['project_topic'] || '_',
+            objective: project['objective'] || '_',
+            acronym: project['acronym_x'] || '_',
+            EuContribution: project['eu_contribution'] || '_',
+            fundedUnder: project['funded_under'] || '_',
+            ProjectWeb_Linkedin: project['project_web_or_linkedin'] || '_',
+            id: project['project_id'] || '_',
+            organization: project['organization_name'] || '_',
+            OrganizationCorrectContribution: project['organization_correct_contribution'] || '_',
+            coordinatorContact: project['contact'] || '_',
+            coordinatorRole: project['role'] || '_',
+            coordinatorEmail: project['Email'] || '_',
+            coordinatorPhone: project['Phone'] || '_',
+            coordinatorLinkedin: project['contact_linkedin'] || '_',
 
-            country: project['Country'] || 'Unknown',
-            CallForProposal: project['Call for Proposal'] || 'Unknown',
+            country: project['country'] || '_',
+            CallForProposal: project['call_for_proposal'] || '_',
             dates: {
-                start: project['Start Date'] || 'Not Specified',
-                end: project['End Date'] || 'Not Specified'
+                start: project['start_date'] || '_',
+                end: project['end_date'] || '_'
             },
             financials: {
-                totalCost: project['Total Cost'] || 'Not Available',
-                netContribution: project['Organization Net EU Contribution'] || 'Not Available'
+                totalCost: project['total_cost'] || '_',
+                netContribution: project['organization_net_eu_contribution'] || '_'
             },
             contact: {
-                name: project['Contact'] || 'No Contact',
-                email: project['Email'] || 'No Email',
-                phone: project['Phone'] || 'No Phone'
+                name: project['contact'] || '_',
+                email: project['email'] || '_',
+                phone: project['phone'] || '_'
             },
             additionalInfo: {
-                programme: project['Programme'] || 'Unspecified',
-                topic: project['Topic'] || 'No Additional Topic'
+                programme: project['programme'] || '_',
+                topic: project['project_topic'] || '_'
             },
             coordinator: {
-                organization: project['Organization'] || 'Unknown',
-                country: project['Country'] || 'Unknown',
-                role: project['Organization Role'] || 'Unknown',
-                netContribution: project['Organization Net EU Contribution'] || 'Not Available'
+                organization: project['organization_name'] || '_',
+                country: project['country'] || '_',
+                role: project['organization_role'] || '_',
+                netContribution: project['organization_net_eu_contribution'] || '_'
             },
             participants: [] // Empty array for old format   
         };
@@ -213,10 +213,10 @@ const Search = () => {
                                     onClick={() => handleProjectSelect(result)}
                                     class="project-item mb-2 rounded-md overflow-hidden bg-blue-50 p-5 hover:bg-blue-100">
                                     <p className='text'>
-                                        {result.coordinator ? result.coordinator['Project Topic'] : result['Project Topic']}
+                                        {result.coordinator ? result.coordinator['project_topic'] : result['project_topic']}
                                     </p>
                                     <p class="text-sm text-gray-500 m-0">
-                                        {result.coordinator ? result.coordinator['Organization'] : result['Organization']}
+                                        {result.coordinator ? result.coordinator['organization_name'] : result['organization_name']}
                                     </p>
 
                                 </li>
@@ -419,7 +419,7 @@ const Search = () => {
                                                 </div>
                                             </div>
                                             <div class="w-1/5">
-                                                <p>Net EU Contribution: <br /> {selectedProject.coordinator.netContribution}</p>
+                                                <p> Net EU Contribution: <br /> {selectedProject.coordinator.netContribution}</p>
                                             </div>
                                             <div class="w-1/5 ml-2">
                                                 <p>Total Contributions: <br /> {selectedProject.OrganizationCorrectContribution}</p>
@@ -546,13 +546,3 @@ const Search = () => {
     );
 }
 export default Search;
-
-
-
-
-
-
-
-
-
-
