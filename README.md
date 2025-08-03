@@ -48,6 +48,6 @@ In terminal:
     -git clone git@github.com:Ben-Najafloo/Magellan.git
     -cd backend
     -python -m venv venv
-    -source venv\Scripts\activate
+    -source venv/Scripts/activate
     -pip flask flask-cors pandas
     -python app.py
